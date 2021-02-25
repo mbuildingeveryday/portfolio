@@ -177,6 +177,17 @@ ul.navbar__menu {
     padding: 8px;
 }
 
+.home--transparent--middle {
+    transition: all 4s ease;
+    opacity: 0.5;
+}
+
+.home--transparent--end {
+    opacity: 0;
+}
+
+
+
 
 /* Common Section */
 .section {

@@ -36,7 +36,21 @@ contactBtn.addEventListener('click', (event)=>{
 });
 
 
+// Handle transparent home section
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+console.log("home height: " + homeHeight);
+document.addEventListener('scroll', () => {
+    let ratio = (homeHeight - window.scrollY) / homeHeight;
+    home.style.opacity = ratio;
+})
+
+
+
+// Utility
 function scrollIntoView(selector){
     const target = document.querySelector(selector);
     target.scrollIntoView({behavior: 'smooth'});
 }
+
+
