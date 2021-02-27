@@ -43,7 +43,19 @@ console.log("home height: " + homeHeight);
 document.addEventListener('scroll', () => {
     let ratio = (homeHeight - window.scrollY) / homeHeight;
     home.style.opacity = ratio;
+});
+
+
+// Show 'arrow up' button when scrolling down
+const arrowupBtn = document.querySelector('.arrowup__btn');
+document.addEventListener('scroll', ()=>{
+    arrowupBtn.style.opacity = window.scrollY / homeHeight;
 })
+
+document.addEventListener('click', () => {
+    scrollIntoView('#home');
+});
+
 
 
 
