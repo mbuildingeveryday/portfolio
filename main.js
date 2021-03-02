@@ -24,9 +24,16 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null){
         return;
     }
-
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
-})
+});
+
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+   navbarMenu.classList.toggle('open'); 
+});
 
 
 // Handle click on "contact me" button on home
@@ -62,7 +69,7 @@ let categoriesContainer = document.querySelector('.work__categories');
 let projectsContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
 categoriesContainer.addEventListener('click', (event) => {
-    const target = event.target;
+    let target = event.target;
     const filter = target.dataset.filter || target.parentNode.dataset.filter;
     if(filter == null){
         return;
@@ -71,7 +78,7 @@ categoriesContainer.addEventListener('click', (event) => {
     // Remove selection from the previous item and select new one
     const active = document.querySelector('.category__btn.active');
     active.classList.remove('active');
-    const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+    target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
     target.classList.add('active');
 
 

@@ -367,10 +367,10 @@ ul.navbar__menu {
     content: ' ';
     display: block;
     position: relative;
-    left: 50%;
-    margin-left: -12px;
     margin-top: 8px;
-    width: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
     height: 2px;
     background-color: var(--color-dark-white);
 }
@@ -442,7 +442,12 @@ ul.navbar__menu {
 
     #navbar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items:flex-start;
+        background-color: var(--color-orange);
+    }
+
+    #navbar.navbar--dark {
+        padding: 16px;
     }
 
     .navbar__menu {
@@ -453,6 +458,10 @@ ul.navbar__menu {
     .navbar__menu {
         width: 100%;
         display: none;
+    }
+
+    .navbar__menu.open{
+        display: block;
     }
 
 
