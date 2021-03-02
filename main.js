@@ -67,6 +67,14 @@ categoriesContainer.addEventListener('click', (event) => {
     if(filter == null){
         return;
     }
+
+    // Remove selection from the previous item and select new one
+    const active = document.querySelector('.category__btn.active');
+    active.classList.remove('active');
+    const target = event.target.nodeName === 'BUTTON' ? event.target : event.target.parentNode;
+    target.classList.add('active');
+
+
     projectsContainer.classList.add('anim-out');
     setTimeout(() => {
         projects.forEach((project) => {
